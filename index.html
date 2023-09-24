@@ -1,64 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Directory Contents</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <title>Directory Contents</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet/less" type="text/css" href="styles.less" />
-<script src="https://cdn.jsdelivr.net/npm/less" ></script>
-  <script src="function.js"></script>
-</head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="function.js"></script>
+    </head>
 
-<body>
-<div class="min-window">
-</div>
+    <body>
+        <div class="min-window"></div>
 
-<div class="doc-browser">
-  <!-- Top Bar -->
-  <div class="window-bar"> 
-    <div class="w-close w-btn">
-      <i class="fa fa-times"></i>
-    </div>
-    <div class="w-min w-btn">
-      <i class="fa fa-minus"></i>
-    </div>
-    <div class="w-max w-btn">
-      <i class="fa fa-plus"></i>
-    </div>
-  </div>
-  
-  <!-- Content View -->
-  <div class="window-content-view">
-    
-    <!-- Folder List View -->
-    <div class="sidebar-folder-list">
-      <div class="folder-list-item" id="docs">
-        <i class="fa fa-folder-o"></i>
-        <p>Documents</p>
-      </div>
-      <div class="folder-list-item" id="projects">
-        <i class="fa fa-desktop"></i>
-        <p>Projects</p>
-      </div>
-      <div class="folder-list-item" id="samples">
-        <i class="fa fa-code"></i>
-        <p>Samples</p>
-      </div>
-      <div class="folder-list-item" id="about-me">
-        <i class="fa fa-user-circle-o"></i>
-        <p>About Me</p>
-      </div>
-    </div> <!-- >.sidebar-folder-list -->
-    
-    <!-- Main Content View (Documents) -->
-    <div class="main-content-view" id="docs-content">
-      <!--
+        <div class="doc-browser">
+            <!-- Top Bar -->
+            <div class="window-bar">
+                <div class="w-close w-btn">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="w-min w-btn">
+                    <i class="fa fa-minus"></i>
+                </div>
+                <div class="w-max w-btn">
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+
+            <!-- Content View -->
+            <div class="window-content-view">
+                <!-- Folder List View -->
+                <div class="sidebar-folder-list">
+                    <div class="folder-list-item" id="docs">
+                        <i class="fa fa-folder-o"></i>
+                        <p>Documents</p>
+                    </div>
+                    <div class="folder-list-item" id="projects">
+                        <i class="fa fa-desktop"></i>
+                        <p>Projects</p>
+                    </div>
+                    <div class="folder-list-item" id="samples">
+                        <i class="fa fa-code"></i>
+                        <p>Samples</p>
+                    </div>
+                    <div class="folder-list-item" id="about-me">
+                        <i class="fa fa-user-circle-o"></i>
+                        <p>About Me</p>
+                    </div>
+                </div>
+                <!-- >.sidebar-folder-list -->
+
+                <!-- Main Content View (Documents) -->
+                <div class="main-content-view" id="docs-content">
+                    <!--
       <div class="content-item">
         <div class="content-icon">
           <i class="fa fa-file-pdf-o fa-3x"></i>
@@ -68,198 +74,168 @@
         </div>
       </div>
       -->
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-word-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          resume.docx
-        </div>
-      </div>
-    
-    </div> <!-- >.window-content-view (Documents) -->
-  
-    <!-- Main Content View (Projects) -->
-    <div class="main-content-view" id="projects-content" style="display:none;">
 
-      <a href="https://debugkaylee.github.io/website/survey">
-        <div class="content-item">
-          <div class="content-icon">
-            <i class="fa fa-folder fa-3x"></i>
-          </div>
-          <div class="content-description">
-            Survey
-          </div>
-        </div>
-      </a>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-folder fa-3x"></i>
-        </div>
-        <div class="content-description">
-          Tribute
-        </div>
-      </div>
-          
-    </div> <!-- >.window-content-view (Projects) -->
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-word-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">resume.docx</div>
+                    </div>
+                </div>
+                <!-- >.window-content-view (Documents) -->
 
-    <!-- Main Content View (Samples) -->
-    <div class="main-content-view" id="samples-content" style="display:none;">
+                <!-- Main Content View (Projects) -->
+                <div
+                    class="main-content-view"
+                    id="projects-content"
+                    style="display: none"
+                >
+                    <a href="https://debugkaylee.github.io/website/survey">
+                        <div class="content-item">
+                            <div class="content-icon">
+                                <i class="fa fa-folder fa-3x"></i>
+                            </div>
+                            <div class="content-description">Survey</div>
+                        </div>
+                    </a>
 
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_1.cpp
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_1.py
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_1.swift
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_1.rb
-        </div>
-      </div>
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_2.cpp
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_2.py
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_2.swift
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_2.rb
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_3.cpp
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_3.py
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_3.swift
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-file-code-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          sample_3.rb
-        </div>
-      </div>
-    </div> <!-- >.window-content-view (Samples) -->
-    
-    <!-- Main Content View (About) -->
-    <div class="main-content-view" id="about-content" style="display:none;">
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-address-card-o fa-3x"></i>
-        </div>
-        <div class="content-description">
-          Contact
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-github fa-3x"></i>
-        </div>
-        <div class="content-description">
-          Github
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-bitbucket fa-3x"></i>
-        </div>
-        <div class="content-description">
-          Bitbucket
-        </div>
-      </div>
-      
-      <div class="content-item">
-        <div class="content-icon">
-          <i class="fa fa-linkedin-square fa-3x"></i>
-        </div>
-        <div class="content-description">
-          LinkedIn
-        </div>
-      </div>
-      
-    </div>
-    
-  </div> <!-- >.window-content-view (About) -->
-  
-</div> <!-- >.doc-browser -->
-</body>
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-folder fa-3x"></i>
+                        </div>
+                        <div class="content-description">Tribute</div>
+                    </div>
+                </div>
+                <!-- >.window-content-view (Projects) -->
 
+                <!-- Main Content View (Samples) -->
+                <div
+                    class="main-content-view"
+                    id="samples-content"
+                    style="display: none"
+                >
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_1.cpp</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_1.py</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_1.swift</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_1.rb</div>
+                    </div>
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_2.cpp</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_2.py</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_2.swift</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_2.rb</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_3.cpp</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_3.py</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_3.swift</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-file-code-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">sample_3.rb</div>
+                    </div>
+                </div>
+                <!-- >.window-content-view (Samples) -->
+
+                <!-- Main Content View (About) -->
+                <div
+                    class="main-content-view"
+                    id="about-content"
+                    style="display: none"
+                >
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-address-card-o fa-3x"></i>
+                        </div>
+                        <div class="content-description">Contact</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-github fa-3x"></i>
+                        </div>
+                        <div class="content-description">Github</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-bitbucket fa-3x"></i>
+                        </div>
+                        <div class="content-description">Bitbucket</div>
+                    </div>
+
+                    <div class="content-item">
+                        <div class="content-icon">
+                            <i class="fa fa-linkedin-square fa-3x"></i>
+                        </div>
+                        <div class="content-description">LinkedIn</div>
+                    </div>
+                </div>
+            </div>
+            <!-- >.window-content-view (About) -->
+        </div>
+        <!-- >.doc-browser -->
+    </body>
 </html>
