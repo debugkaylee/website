@@ -1,63 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <html lang="en">
-    <meta charset="UTF-8">
-    <title>Most Popular Co-curricular Activities Survey Form</title>
-    <link rel="stylesheet" href="styles.css">
-  <head>
-    </html>
-  </head>
 
-  <body>
-    <h1 id="title">Most Popular Co-curricular Activities Survey Form</h1>
-    <p id="description">Thank you for taking the time to help us improve the platform.</p>
-    </body>
-    </html> 
-  </h1>
-  </p>
-  <form id="survey-form">
-  <fieldset>
-    <label id="name-label">Enter Your Name: <input id="name" type="text" placeholder="name" required/></label><br>
-    <label id="email-label">Enter Your Email: <input id="email" type="email" placeholder="email" required/></label><br>
-    <label id="number-label">Enter Your Age:
-<input id="number" type="number" type="text" min="10" max="99" placeholder="age" required/></label><br>
-     <label for="personal-account"><input type="radio" name="account-type" id="personal-account" value="radio" />Personal Account</label>
-     <label for="business-account"><input type="radio" name="account-type" id="business-account" value="radio" />Business Account</label><br>
-<p class="left">Which option best describes your current role? </p>
-<select id="dropdown" name="role" class="form-control" required>
-  <option valve="student">Student</option>
-  <option valve="full-time-job">Full Time Job</option>
-  <option valve="retirees">Retirees</option>
-  <option valve="prefer-not-to-say">Prefer not to say</option>
-</select>
-<p class="left">What is your choice? (can choose more than 1)</p>
+<head>
+  <meta charset="UTF-8">
+  <title>Directory Contents</title>
+  <link rel="stylesheet" href=".style.css">
+  <script src=".sorttable.js"></script>
+</head>
 
-    <input type="checkbox" id="activities1" name="activities1" value="badminton">
-    <label for="activities1">Badminton</label><br>
-    <input type="checkbox" id="activities2" name="activities2" value="basketball"> 
-    <label for="activities2">Basketball</label><br>
-    <input type="checkbox" id="activities3" name="activities3" value="music">
-    <label for="activities3">Music</label><br>
-    <input type="checkbox" id="activities4" name="activities4" value="dance">
-    <label for="activities4">Dance</label><br>
-    <input type="checkbox" id="activities5" name="activities5" value="drama">
-    <label for="activities5">Drama</label><br>
-    <input type="checkbox" id="activities6" name="activities6" value="martial-arts">
-    <label for="activities6">Martial Arts</label><br>
-    <input type="checkbox" id="activities7" name="activities7" value="chess">
-    <label for="activities7">Chess</label><br>
-    <input type="checkbox" id="activities8" name="activities8" value="photography">
-    <label for="acitivities8">Photography</label><br>
-    <input type="checkbox" id="activities9" name="activities9" value="cooking"
-    <label for="activities9">Cooking</label><br>
-    <input type="checkbox" id="activities10" name="activities10" value="knitting">
-    <label for="activities10">Knitting</label><br>
-    <input type="checkbox" id="activities11" name="activities11" value="others">
-    <label for="activities11">Others(kindly type the activity)</label><br>
-    <input id="name" type="text"></label>
-  </fieldset>
-  <fieldset>
-    <p><label for="review">Review: </label></p>
-    <textarea id="review" name="review" rows="4" cols="50"></textarea>
-  </fieldset>
-   <input id="submit" type="Submit">
+<body>
+
+  <div id="container">
+  
+    <h1>Directory Contents</h1>
+    
+    <table class="sortable">
+      <thead>
+        <tr>
+          <th>Filename</th>
+          <th>Type</th>
+          <th>Size <small>(bytes)</small></th>
+          <th>Date Modified</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+        // Opens directory
+        $myDirectory=opendir(".");
+        
+        // Gets each entry
+        while($entryName=readdir($myDirectory)) {
+          $dirArray[]=$entryName;
+        }
+        
+        // Finds extensions of files
+        function findexts ($filename) {
+          $filename=strtolower($filename);
+          $exts=split("[/\\.]", $filename);
+          $n=count($exts)-1;
+          $exts=$exts[$n];
+          return $exts;
+        }
+        
+        // Closes directory
+        closedir($myDirectory);
+        
+        // Counts elements in array
+        $indexCount=count($dirArray);
+        
+        // Sorts files
+        sort($dirArray);
+        
+        // Loops through the array of files
+        for($index=0; $index < $indexCount; $index++) {
+        
+          // Allows ./?hidden to show hidden files
+          if($_SERVER['QUERY_STRING']=="hidden")
+          {$hide="";
+          $ahref="./";
+          $atext="Hide";}
+          else
+          {$hide=".";
+          $ahref="./?hidden";
+          $atext="Show";}
+          if(substr("$dirArray[$index]", 0, 1) != $hide) {
+          
+          // Gets File Names
+          $name=$dirArray[$index];
+          $namehref=$dirArray[$index];
+          
+          // Gets Extensions 
+          $extn=findexts($dirArray[$index]); 
+          
+          // Gets file size 
+          $size=number_format(filesize($dirArray[$index]));
+          
+          // Gets Date Modified Data
+          $modtime=date("M j Y g:i A", filemtime($dirArray[$index]));
+          $timekey=date("YmdHis", filemtime($dirArray[$index]));
+          
+          // Prettifies File Types, add more to suit your needs.
+          switch ($extn){
+            case "png": $extn="PNG Image"; break;
+            case "jpg": $extn="JPEG Image"; break;
+            case "svg": $extn="SVG Image"; break;
+            case "gif": $extn="GIF Image"; break;
+            case "ico": $extn="Windows Icon"; break;
+            
+            case "txt": $extn="Text File"; break;
+            case "log": $extn="Log File"; break;
+            case "htm": $extn="HTML File"; break;
+            case "php": $extn="PHP Script"; break;
+            case "js": $extn="Javascript"; break;
+            case "css": $extn="Stylesheet"; break;
+            case "pdf": $extn="PDF Document"; break;
+            
+            case "zip": $extn="ZIP Archive"; break;
+            case "bak": $extn="Backup File"; break;
+            
+            default: $extn=strtoupper($extn)." File"; break;
+          }
+          
+          // Separates directories
+          if(is_dir($dirArray[$index])) {
+            $extn="&lt;Directory&gt;"; 
+            $size="&lt;Directory&gt;"; 
+            $class="dir";
+          } else {
+            $class="file";
+          }
+          
+          // Cleans up . and .. directories 
+          if($name=="."){$name=". (Current Directory)"; $extn="&lt;System Dir&gt;";}
+          if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
+          
+          // Print 'em
+          print("
+          <tr class='$class'>
+            <td><a href='./$namehref'>$name</a></td>
+            <td><a href='./$namehref'>$extn</a></td>
+            <td><a href='./$namehref'>$size</a></td>
+            <td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
+          </tr>");
+          }
+        }
+      ?>
+      </tbody>
+    </table>
+  
+    <h2><?php print("<a href='$ahref'>$atext hidden files</a>"); ?></h2>
+    
+  </div>
+  
+</body>
+
+</html>
